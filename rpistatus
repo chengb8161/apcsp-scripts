@@ -1,0 +1,22 @@
+#!/bin/bash
+
+for i in {1..9}
+do
+	ping rpi0$i -w 3 > /dev/null
+	if [ $? -eq 0 ]; then
+		echo "rpi0$i is up"
+		else
+		echo "rpi0$i is down"
+	fi
+done
+
+
+for i in {10..20}
+do
+	ping rpi$i -w 3 > /dev/null
+	if [ $? -eq 0 ]; then
+		echo "rpi$i is up"
+		else
+		echo "rpi$i is down" 
+	fi
+done
